@@ -1,0 +1,523 @@
+{
+  "version": 4,
+  "terraform_version": "1.13.4",
+  "serial": 15,
+  "lineage": "7c1d4e76-814f-6760-3985-6934c3fa921b",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "google_compute_address",
+      "name": "nat",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address": "34.171.16.179",
+            "address_type": "EXTERNAL",
+            "creation_timestamp": "2025-10-28T11:29:27.663-07:00",
+            "description": "",
+            "effective_labels": {
+              "goog-terraform-provisioned": "true"
+            },
+            "id": "projects/tutorialgcp001/regions/us-central1/addresses/nat",
+            "ip_version": "",
+            "ipv6_endpoint_type": "",
+            "label_fingerprint": "vezUS-42LLM=",
+            "labels": {},
+            "name": "nat",
+            "network": "",
+            "network_tier": "PREMIUM",
+            "prefix_length": 0,
+            "project": "tutorialgcp001",
+            "purpose": "",
+            "region": "us-central1",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/tutorialgcp001/regions/us-central1/addresses/nat",
+            "subnetwork": "",
+            "terraform_labels": {
+              "goog-terraform-provisioned": "true"
+            },
+            "timeouts": null,
+            "users": [
+              "https://www.googleapis.com/compute/v1/projects/tutorialgcp001/regions/us-central1/routers/router"
+            ]
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "google_project_service.api"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_compute_firewall",
+      "name": "allow_iap_ssh",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "allow": [
+              {
+                "ports": [
+                  "22"
+                ],
+                "protocol": "tcp"
+              }
+            ],
+            "creation_timestamp": "2025-10-28T11:29:49.359-07:00",
+            "deny": [],
+            "description": "",
+            "destination_ranges": [],
+            "direction": "INGRESS",
+            "disabled": false,
+            "enable_logging": null,
+            "id": "projects/tutorialgcp001/global/firewalls/allow-iaq-ssh",
+            "log_config": [],
+            "name": "allow-iaq-ssh",
+            "network": "https://www.googleapis.com/compute/v1/projects/tutorialgcp001/global/networks/main",
+            "params": [],
+            "priority": 1000,
+            "project": "tutorialgcp001",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/tutorialgcp001/global/firewalls/allow-iaq-ssh",
+            "source_ranges": [
+              "35.235.240.0/20"
+            ],
+            "source_service_accounts": [],
+            "source_tags": [],
+            "target_service_accounts": [],
+            "target_tags": [],
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "google_compute_network.vpc",
+            "google_project_service.api"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_compute_network",
+      "name": "vpc",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "auto_create_subnetworks": false,
+            "bgp_always_compare_med": false,
+            "bgp_best_path_selection_mode": "LEGACY",
+            "bgp_inter_region_cost": "",
+            "delete_default_routes_on_create": true,
+            "description": "",
+            "enable_ula_internal_ipv6": false,
+            "gateway_ipv4": "",
+            "id": "projects/tutorialgcp001/global/networks/main",
+            "internal_ipv6_range": "",
+            "mtu": 0,
+            "name": "main",
+            "network_firewall_policy_enforcement_order": "AFTER_CLASSIC_FIREWALL",
+            "network_id": "808216451942757737",
+            "network_profile": "",
+            "numeric_id": "808216451942757737",
+            "params": [],
+            "project": "tutorialgcp001",
+            "routing_mode": "REGIONAL",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/tutorialgcp001/global/networks/main",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "google_project_service.api"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_compute_route",
+      "name": "default_route",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "as_paths": [],
+            "creation_timestamp": "2025-10-28T11:29:49.354-07:00",
+            "description": "",
+            "dest_range": "0.0.0.0/0",
+            "id": "projects/tutorialgcp001/global/routes/default-route",
+            "name": "default-route",
+            "network": "https://www.googleapis.com/compute/v1/projects/tutorialgcp001/global/networks/main",
+            "next_hop_gateway": "https://www.googleapis.com/compute/v1/projects/tutorialgcp001/global/gateways/default-internet-gateway",
+            "next_hop_hub": "",
+            "next_hop_ilb": "",
+            "next_hop_instance": "",
+            "next_hop_instance_zone": null,
+            "next_hop_inter_region_cost": "",
+            "next_hop_ip": "",
+            "next_hop_med": "",
+            "next_hop_network": "",
+            "next_hop_origin": "",
+            "next_hop_peering": "",
+            "next_hop_vpn_tunnel": "",
+            "params": [],
+            "priority": 1000,
+            "project": "tutorialgcp001",
+            "route_status": "",
+            "route_type": "",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/tutorialgcp001/global/routes/default-route",
+            "tags": [],
+            "timeouts": null,
+            "warnings": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDB9fQ==",
+          "dependencies": [
+            "google_compute_network.vpc",
+            "google_project_service.api"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_compute_router",
+      "name": "router",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "bgp": [],
+            "creation_timestamp": "2025-10-28T11:29:49.524-07:00",
+            "description": "",
+            "encrypted_interconnect_router": false,
+            "id": "projects/tutorialgcp001/regions/us-central1/routers/router",
+            "md5_authentication_keys": [],
+            "name": "router",
+            "network": "https://www.googleapis.com/compute/v1/projects/tutorialgcp001/global/networks/main",
+            "project": "tutorialgcp001",
+            "region": "us-central1",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/tutorialgcp001/regions/us-central1/routers/router",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "google_compute_network.vpc",
+            "google_project_service.api"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_compute_router_nat",
+      "name": "nat",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "auto_network_tier": null,
+            "drain_nat_ips": [],
+            "enable_dynamic_port_allocation": false,
+            "enable_endpoint_independent_mapping": false,
+            "endpoint_types": [
+              "ENDPOINT_TYPE_VM"
+            ],
+            "icmp_idle_timeout_sec": 30,
+            "id": "tutorialgcp001/us-central1/router/nat",
+            "initial_nat_ips": null,
+            "log_config": [],
+            "max_ports_per_vm": 0,
+            "min_ports_per_vm": 0,
+            "name": "nat",
+            "nat64_subnetwork": [],
+            "nat_ip_allocate_option": "MANUAL_ONLY",
+            "nat_ips": [
+              "https://www.googleapis.com/compute/v1/projects/tutorialgcp001/regions/us-central1/addresses/nat"
+            ],
+            "project": "tutorialgcp001",
+            "region": "us-central1",
+            "router": "router",
+            "rules": [],
+            "source_subnetwork_ip_ranges_to_nat": "LIST_OF_SUBNETWORKS",
+            "source_subnetwork_ip_ranges_to_nat64": "",
+            "subnetwork": [
+              {
+                "name": "https://www.googleapis.com/compute/v1/projects/tutorialgcp001/regions/us-central1/subnetworks/private",
+                "secondary_ip_range_names": [],
+                "source_ip_ranges_to_nat": [
+                  "ALL_IP_RANGES"
+                ]
+              }
+            ],
+            "tcp_established_idle_timeout_sec": 1200,
+            "tcp_time_wait_timeout_sec": 120,
+            "tcp_transitory_idle_timeout_sec": 30,
+            "timeouts": null,
+            "type": "PUBLIC",
+            "udp_idle_timeout_sec": 30
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "google_compute_address.nat",
+            "google_compute_network.vpc",
+            "google_compute_router.router",
+            "google_compute_subnetwork.private",
+            "google_project_service.api"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_compute_subnetwork",
+      "name": "private",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "creation_timestamp": "2025-10-28T11:29:49.554-07:00",
+            "description": "",
+            "enable_flow_logs": false,
+            "external_ipv6_prefix": "",
+            "fingerprint": null,
+            "gateway_address": "10.0.32.1",
+            "id": "projects/tutorialgcp001/regions/us-central1/subnetworks/private",
+            "internal_ipv6_prefix": "",
+            "ip_cidr_range": "10.0.32.0/19",
+            "ip_collection": null,
+            "ipv6_access_type": "",
+            "ipv6_cidr_range": "",
+            "ipv6_gce_endpoint": "",
+            "log_config": [],
+            "name": "private",
+            "network": "https://www.googleapis.com/compute/v1/projects/tutorialgcp001/global/networks/main",
+            "params": [],
+            "private_ip_google_access": true,
+            "private_ipv6_google_access": "DISABLE_GOOGLE_ACCESS",
+            "project": "tutorialgcp001",
+            "purpose": "PRIVATE",
+            "region": "us-central1",
+            "reserved_internal_range": "",
+            "role": "",
+            "secondary_ip_range": [
+              {
+                "ip_cidr_range": "172.16.0.0/14",
+                "range_name": "k8s-pods",
+                "reserved_internal_range": ""
+              },
+              {
+                "ip_cidr_range": "172.20.0.0/18",
+                "range_name": "k8s-services",
+                "reserved_internal_range": ""
+              }
+            ],
+            "self_link": "https://www.googleapis.com/compute/v1/projects/tutorialgcp001/regions/us-central1/subnetworks/private",
+            "send_secondary_ip_range_if_empty": null,
+            "stack_type": "IPV4_ONLY",
+            "state": "",
+            "subnetwork_id": -1213418126,
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "google_compute_network.vpc",
+            "google_project_service.api"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_compute_subnetwork",
+      "name": "private2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "creation_timestamp": "2025-10-28T11:45:11.655-07:00",
+            "description": "",
+            "enable_flow_logs": false,
+            "external_ipv6_prefix": "",
+            "fingerprint": null,
+            "gateway_address": "10.0.64.1",
+            "id": "projects/tutorialgcp001/regions/us-central1/subnetworks/private2",
+            "internal_ipv6_prefix": "",
+            "ip_cidr_range": "10.0.64.0/19",
+            "ip_collection": null,
+            "ipv6_access_type": "",
+            "ipv6_cidr_range": "",
+            "ipv6_gce_endpoint": "",
+            "log_config": [],
+            "name": "private2",
+            "network": "https://www.googleapis.com/compute/v1/projects/tutorialgcp001/global/networks/main",
+            "params": [],
+            "private_ip_google_access": true,
+            "private_ipv6_google_access": "DISABLE_GOOGLE_ACCESS",
+            "project": "tutorialgcp001",
+            "purpose": "PRIVATE",
+            "region": "us-central1",
+            "reserved_internal_range": "",
+            "role": "",
+            "secondary_ip_range": [],
+            "self_link": "https://www.googleapis.com/compute/v1/projects/tutorialgcp001/regions/us-central1/subnetworks/private2",
+            "send_secondary_ip_range_if_empty": null,
+            "stack_type": "IPV4_ONLY",
+            "state": "",
+            "subnetwork_id": -1213419048,
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "google_compute_network.vpc",
+            "google_project_service.api"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_compute_subnetwork",
+      "name": "public",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "creation_timestamp": "2025-10-28T11:29:49.450-07:00",
+            "description": "",
+            "enable_flow_logs": false,
+            "external_ipv6_prefix": "",
+            "fingerprint": null,
+            "gateway_address": "10.0.0.1",
+            "id": "projects/tutorialgcp001/regions/us-central1/subnetworks/public",
+            "internal_ipv6_prefix": "",
+            "ip_cidr_range": "10.0.0.0/19",
+            "ip_collection": null,
+            "ipv6_access_type": "",
+            "ipv6_cidr_range": "",
+            "ipv6_gce_endpoint": "",
+            "log_config": [],
+            "name": "public",
+            "network": "https://www.googleapis.com/compute/v1/projects/tutorialgcp001/global/networks/main",
+            "params": [],
+            "private_ip_google_access": true,
+            "private_ipv6_google_access": "DISABLE_GOOGLE_ACCESS",
+            "project": "tutorialgcp001",
+            "purpose": "PRIVATE",
+            "region": "us-central1",
+            "reserved_internal_range": "",
+            "role": "",
+            "secondary_ip_range": [],
+            "self_link": "https://www.googleapis.com/compute/v1/projects/tutorialgcp001/regions/us-central1/subnetworks/public",
+            "send_secondary_ip_range_if_empty": null,
+            "stack_type": "IPV4_ONLY",
+            "state": "",
+            "subnetwork_id": -1213418126,
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "google_compute_network.vpc",
+            "google_project_service.api"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_project_service",
+      "name": "api",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "index_key": "compute.googleapis.com",
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "tutorialgcp001/compute.googleapis.com",
+            "project": "tutorialgcp001",
+            "service": "compute.googleapis.com",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoxMjAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": "container.googleapis.com",
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "tutorialgcp001/container.googleapis.com",
+            "project": "tutorialgcp001",
+            "service": "container.googleapis.com",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoxMjAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": "logging.googleapis.com",
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "tutorialgcp001/logging.googleapis.com",
+            "project": "tutorialgcp001",
+            "service": "logging.googleapis.com",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoxMjAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": "secretmanager.googleapis.com",
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "tutorialgcp001/secretmanager.googleapis.com",
+            "project": "tutorialgcp001",
+            "service": "secretmanager.googleapis.com",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoxMjAwMDAwMDAwMDAwfX0="
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
