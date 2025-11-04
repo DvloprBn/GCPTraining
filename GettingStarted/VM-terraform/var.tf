@@ -4,7 +4,7 @@ variable "project_id" {
 }
 
 variable "region" {
-  description = "La región de Google Cloud donde se creará el clúster."
+  description = "La región de Google Cloud donde se creará el recurso."
   type        = string
   default     = "us-central1"
 }
