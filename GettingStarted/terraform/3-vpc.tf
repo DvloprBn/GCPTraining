@@ -7,6 +7,8 @@ resource "google_compute_network" "vpc" {
   depends_on = [ google_project_service.api ]
 }
 
+# Se debe crear una subnet para que trabajae con esta VPC
+
 # Remove this route to make the VPC fully private
 # You need this route for the NAT gateway
 resource "google_compute_route" "default_route" {
