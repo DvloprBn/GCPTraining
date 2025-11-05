@@ -1,0 +1,43 @@
+resource "google_compute_subnetwork" "publicVM" {
+  name                      = "public-vm"
+  ip_cidr_range             = "10.0.0.0/19"
+  region                    = local.region
+  # para hacer la relacion con la VPC
+  # para relacionar la red con la subnet
+  # tipo y nombre del recurso
+  #   google_compute_network
+  #   vpc (vpcVM)
+  # solicita el ID de la VPC creada
+  network                   = google_compute_network.vpcVM.id
+  private_ip_google_access  = true
+  stack_type                = "IPV4_ONLY"
+}
+
+resource "google_compute_subnetwork" "privateVM" {
+  name                      = "private-vm"
+  ip_cidr_range             = "10.0.32.0/19"
+  region                    = local.region
+  # para hacer la relacion con la VPC
+  network                   = google_compute_network.vpcVM.id
+  private_ip_google_access  = true
+  stack_type                = "IPV4_ONLY"
+
+  secondary_ip_range {
+    range_name = "k8s-pods"
+    ip_cidr_range = "172.16.0.0/14"
+  }
+
+    secondary_ip_range {
+    range_name = "k8s-services"
+    ip_cidr_range = "172.20.0.0/18"
+  }
+}
+
+# resource "google_compute_subnetwork" "private2" {
+#   name                      = "private2"
+#   ip_cidr_range             = "10.0.64.0/19"
+#   region                    = local.region
+#   network                   = google_compute_network.vpc.id
+#   private_ip_google_access  = true
+#   stack_type                = "IPV4_ONLY"
+# }

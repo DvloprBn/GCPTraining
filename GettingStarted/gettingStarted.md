@@ -6,6 +6,7 @@
 
 * https://registry.terraform.io/providers/hashicorp/google/latest/docs
 * https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/container_cluster
+* https://www.youtube.com/watch?v=5BsueWtVn8I
 
 
 
