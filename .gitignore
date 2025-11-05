@@ -1,5 +1,9 @@
 # Git Ignore
-.terraform
-terraform.tfstate
-terraform.tfstate.backup
 .backup
+
+.terraform
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform.lock.hcl
+.DS_Store
