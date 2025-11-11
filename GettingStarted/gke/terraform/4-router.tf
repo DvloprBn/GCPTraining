@@ -5,5 +5,5 @@ resource "google_compute_router" "router" {
   # The same region where the subnet was created
   region = "us-central1"
   # The reference to the VPC, Where it is wanted to place this router
-  network = google_compute_network.main.id
+  network = google_compute_network.vpc_main.id
 }

@@ -1,6 +1,6 @@
 resource "google_compute_firewall" "allow-ssh" {
   name = "allow-ssh"
-  network = google_compute_network.main.name
+  network = google_compute_network.vpc_main.name
 
   allow {
     protocol = "tcp"

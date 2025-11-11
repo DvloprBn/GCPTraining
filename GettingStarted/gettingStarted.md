@@ -79,5 +79,71 @@ Esta lógica te protege de cambios de configuración potencialmente peligrosos q
 
 
 
+#### VPC
+
+
+¿Qué es una VPC en GCP?
+Una VPC (Virtual Private Cloud), o Nube Privada Virtual, es esencialmente la versión virtual de una red física, implementada dentro de la infraestructura global de Google. Puedes pensar en ella como tu propia red privada y aislada dentro de la nube pública de Google.
+
+Propiedades Clave:
+Recurso Global: La red de VPC es un recurso global que abarca todas las regiones de Google Cloud.
+
+Conectividad: Proporciona la conectividad de red para tus recursos en la nube, como las instancias de máquinas virtuales (VMs) de Compute Engine.
+
+Subredes (Subnetworks): Cada red de VPC consta de una o más subredes, las cuales sí son recursos regionales con sus propios rangos de direcciones IP.
+
+Control y Seguridad: Te permite controlar el flujo de tráfico mediante reglas de firewall y rutas, garantizando el aislamiento y la seguridad de tus recursos.
+
+🎯 ¿En qué casos se necesita una VPC?
+Una VPC es la base de tu arquitectura de red en GCP, y es necesaria para:
+
+Aislamiento y Seguridad de Recursos:
+
+Para separar tus entornos (por ejemplo, Producción, Desarrollo y Pruebas) con diferentes subredes y reglas de firewall, asegurando que los recursos sensibles estén aislados en subredes privadas.
+
+Para ejecutar bases de datos y servicios internos en subredes privadas, inaccesibles directamente desde internet.
+
+Arquitecturas Distribuidas y Escalables:
+
+Alojar aplicaciones web seguras, microservicios y clústeres de contenedores (como Google Kubernetes Engine - GKE) dentro de una red controlada.
+
+Permitir la comunicación eficiente entre recursos que se encuentran en diferentes regiones geográficas de Google Cloud.
+
+Entornos Híbridos (Nube a On-Premise):
+
+Cuando necesitas conectar de forma segura tu red de VPC en GCP con tu centro de datos local (on-premise), utilizando servicios como Cloud VPN o Cloud Interconnect.
+
+Organizaciones Grandes (VPC Compartida):
+
+Organizaciones que requieren una gestión centralizada de la red mientras permiten que múltiples equipos o proyectos utilicen la misma infraestructura de red bajo reglas y políticas comunes.
+
+En resumen, prácticamente cualquier implementación de carga de trabajo en GCP requiere una VPC, ya que es el componente que proporciona la estructura, seguridad y control para todos tus recursos en la nube.
+
+
+---  
+
+
+### Task GCP Terraform
+
+1. Create a cluster
+2. Within the cluster create a VM
+3. a PG instance
+
+
+* El siguiente código de Terraform realiza estos pasos clave:
+
+    Red: Crea una VPC y una subred.
+
+    GKE: Despliega un clúster GKE en esa subred.
+
+    VM: Crea una VM simple de Compute Engine.
+
+    Cloud SQL (PostgreSQL): Provee una instancia de base de datos Cloud SQL para PostgreSQL, la cual es un servicio gestionado y no una VM. Nota Importante: GKE y las VMs interactúan con Cloud SQL usando su IP privada dentro de la misma VPC.
+
+
+
+
+
+
 
 

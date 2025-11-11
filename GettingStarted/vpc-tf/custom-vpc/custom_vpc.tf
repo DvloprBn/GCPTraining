@@ -9,7 +9,7 @@ resource "google_compute_network" "custom_vpc" {
   routing_mode            = "GLOBAL"
 }
 
----
+# ---
 
 # 2. Definición de la Subred (google_compute_subnetwork)
 # Creamos una subred regional que pertenece a la VPC anterior.
@@ -24,7 +24,7 @@ resource "google_compute_subnetwork" "public_subnet" {
   network       = google_compute_network.custom_vpc.self_link
 }
 
----
+# ---
 
 # 3. Regla de Firewall Básica (google_compute_firewall)
 # Permitir tráfico ICMP (ping) e SSH desde cualquier origen (0.0.0.0/0)
