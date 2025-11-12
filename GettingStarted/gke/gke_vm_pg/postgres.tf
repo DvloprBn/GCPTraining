@@ -13,6 +13,7 @@ resource "google_project_service" "vps_api" {
 }
 
 ## 5.1. Rango de IP para Private Service Access
+# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_global_address
 resource "google_compute_global_address" "private_ip_alloc" {
   provider      = google-beta # Puede requerir el proveedor beta
   name          = "google-managed-services-range"

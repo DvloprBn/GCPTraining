@@ -1,4 +1,3 @@
-# main.tf
 
 # -----------------
 # 1. Variables
@@ -21,22 +20,3 @@ variable "zone" {
   type        = string
   default     = "us-central1-a"
 }
-
-
-provider "google" {
-    project = local.project_id    # "my-project-id"
-    region  = local.region        # "us-central1"
-    zone = local.zone             # "us-central1-a"
-}
-
-/*
-terraform {
-  required_version = ">= 1.0"
-
-  required_providers {
-    google = {
-        source = "hashicorp/google"
-        version = "~> 5.0"
-    }
-  }
-}*/
