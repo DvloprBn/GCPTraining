@@ -68,6 +68,26 @@ Cuando modificas un recurso en Terraform, el plan evalúa si esa modificación r
 Esta lógica te protege de cambios de configuración potencialmente peligrosos que podrían dejar tu clúster en un estado inconsistente. Te fuerza a pensar en el impacto de los cambios antes de aplicarlos.
 
 
+### GKE
+
+* ¿Que es un contenedor?
+
+    Empaquetado lógico en el que las aplicaciones se pueden extraer del entorno en el que se ejecutan.
+
+
+* Que es un Pod?
+    Parte mas pequeña que contienen contenedores
+
+
+* Que es un Nodo?
+    Maquinas que ejecutan las aplicaciones.
+
+* Que es GKE?
+    Herramienta que provee manejo para despliegue, manejo y escalado de aplicaciones.
+
+
+
+
 
 
 
@@ -141,6 +161,13 @@ En resumen, prácticamente cualquier implementación de carga de trabajo en GCP 
     Cloud SQL (PostgreSQL): Provee una instancia de base de datos Cloud SQL para PostgreSQL, la cual es un servicio gestionado y no una VM. Nota Importante: GKE y las VMs interactúan con Cloud SQL usando su IP privada dentro de la misma VPC.
 
 
+    terraform state list
+
+
+
+### bucket in GCP
+
++ para que se utiliza
 
 
 
